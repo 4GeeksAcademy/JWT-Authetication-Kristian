@@ -1,4 +1,16 @@
 body {
-    background-color: rgb(42, 42, 42);
-    color: white;
+  background-color: rgb(42, 42, 42);
+  color: white;
+}
+.navbar-color {
+  background-color: black;
+  color: white;
+}
+.login-form {
+  height: 300px;
+  width: 300px;
+}
+.signup-form{
+    height: 400px;
+    width: 600px
 }
