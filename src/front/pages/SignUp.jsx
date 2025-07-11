@@ -27,7 +27,9 @@ export const SignUp = () => {
                     </div>
                 </div>
                 <div className="col-12 my-2 d-flex justify-content-center">
-                    <button type="submit" className="btn btn-primary">Sign up</button>
+                    <Link to="/login">
+                        <button type="submit" className="btn btn-primary">Sign up</button>
+                    </Link>
                 </div>
             </form>
         </div>

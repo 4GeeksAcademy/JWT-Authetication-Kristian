@@ -14,7 +14,9 @@ export const Login = () => {
                     <input type="password" className="form-control" id="exampleInputPassword1" />
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <Link to="/usershome">
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                    </Link>
                 </div>
             </form>
         </div>
