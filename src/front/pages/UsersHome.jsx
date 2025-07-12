@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
-import useGlobalReducer from "../hooks/useGlobalReducer";
-
 export const UsersHome = () => {
-    const backgroundStyle = {
-        backgroundImage: `url({https://www.techmonitor.ai/wp-content/uploads/sites/29/2016/08/shutterstock_740523562-ai.webp})`
-    }
-
     return (
-        <div style={backgroundStyle}>
-            
+        <div style={{
+            backgroundImage: `url(https://polskieradio24.pl/_next/image?url=https%3A%2F%2Fstatic.prsa.pl%2Fimages%2Fb8d0eb45-1129-483c-9ece-033a3745deb7.file&w=1920&q=75)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            width: '100%',
+            height: '100vh'
+        }}>
+
         </div>
     )
 
