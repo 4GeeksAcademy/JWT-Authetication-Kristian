@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 export const SignUp = () => {
     const [formData, setFormData] = useState({
