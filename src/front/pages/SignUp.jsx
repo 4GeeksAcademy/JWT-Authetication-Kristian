@@ -26,6 +26,8 @@ export const SignUp = () => {
         console.log("Form data to be sent:", formData);
 
         try {
+            console.log("Form data to be sent:", formData);
+            console.log("Backend URL:", backendUrl);
             const resp = await fetch(backendUrl + "/api/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -53,21 +55,21 @@ export const SignUp = () => {
                     <div className="col-6">
 
                         <label htmlFor="inputEmail4" className="form-label">Email</label>
-                        <input type="email" name="email" className="form-control" id="inputEmail4" onChange={handleChange} />
+                        <input type="email" name="email" className="form-control" id="inputEmail4" value={formData.email} onChange={handleChange} />
                     </div>
                     <div className="col-6">
                         <label htmlFor="inputPassword4" className="form-label">Password</label>
-                        <input type="password" name="password" className="form-control" id="inputPassword4" onChange={handleChange} />
+                        <input type="password" name="password" className="form-control" id="inputPassword4" value={formData.password} onChange={handleChange} />
                     </div>
                 </div>
                 <div className="row mt-2">
                     <div className="col-6">
                         <label htmlFor="inputFullName" className="form-label">Full Name</label>
-                        <input type="text" name="name" className="form-control" id="inputFullName" onChange={handleChange} />
+                        <input type="text" name="name" className="form-control" id="inputFullName" value={formData.name} onChange={handleChange} />
                     </div>
                     <div className="col-6">
                         <label htmlFor="inputPhone" className="form-label">Phone</label>
-                        <input type="tel" name="phone" className="form-control" id="inputPhone" onChange={handleChange} />
+                        <input type="tel" name="phone" className="form-control" id="inputPhone" value={formData.phone} onChange={handleChange} />
                     </div>
                 </div>
                 <div className="col-12 my-2 d-flex justify-content-center">
