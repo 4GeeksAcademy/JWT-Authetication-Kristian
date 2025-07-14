@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const SignUp = () => {
@@ -34,6 +35,7 @@ export const SignUp = () => {
 
             if (resp.ok) {
                 alert("Registration successful!");
+                navigate("/login");
             } else {
                 alert(data.message || "Registration failed! Please try again..");
             }
@@ -68,9 +70,7 @@ export const SignUp = () => {
                     </div>
                 </div>
                 <div className="col-12 my-2 d-flex justify-content-center">
-                    <Link to="/login">
-                        <button type="submit" className="btn btn-primary">Sign up</button>
-                    </Link>
+                    <button type="submit" className="btn btn-primary">Sign up</button>
                 </div>
             </form>
         </div>

@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Login = () => {
@@ -43,6 +44,7 @@ export const Login = () => {
 
             localStorage.setItem("token", data.access_token);
             localStorage.setItem("user", JSON.stringify(data.user));
+            navigate("/users/usershome");
 
         } catch (err) {
             console.error("Login error:", err);
@@ -59,17 +61,27 @@ export const Login = () => {
         <div className="d-flex justify-content-center align-items-center my-4 login-form container card">
             <form onSubmit={handleLogin}>
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Email</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+                    <input
+                        className="form-control"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
                 </div>
                 <div className="mb-3">
-                    <label for="exampleInputPassword1" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" />
+                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                    <input
+                        className="form-control"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Link to="/usershome">
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </Link>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>

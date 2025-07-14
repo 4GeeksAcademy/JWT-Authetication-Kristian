@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const UsersNavbar = () => {
+    const { dispatch } = useGlobalReducer();
+    const navigate = useNavigate();
+
     const handleLogout = () => {
         dispatch({ type: "logout" });
         navigate("/");

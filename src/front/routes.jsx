@@ -13,6 +13,7 @@ import { SignUp } from "./pages/SignUp"
 import { Login } from "./pages/Login"
 import { UsersHome } from "./pages/UsersHome"
 import { UsersLayout } from "./pages/UsersLayout"
+import { PrivateRoute } from "./components/PrivateRoute";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,13 +25,15 @@ export const router = createBrowserRouter(
 
     // Root Route: All navigation will start from here.
     <>
-      <Route path="/" element={<UsersLayout />} errorElement={<h1>Not found!</h1>} >
-        <Route path="/usershome" element={<UsersHome />} />
+      <Route path="/users" element={<PrivateRoute />} errorElement={<h1>Not found!</h1>}>
+        <Route element={<UsersLayout />} >
+          <Route path="usershome" element={<UsersHome />} />
+        </Route>
       </Route>
 
       <Route path="/" element={<Layout />} errorElement={<h1>Not found!</h1>} >
         {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/single/:theId" element={<Single />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
         <Route path="/signup" element={<SignUp />} />
