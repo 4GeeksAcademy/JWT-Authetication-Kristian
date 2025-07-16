@@ -29,11 +29,10 @@ def handle_hello():
 @api.route('/signup', methods=['POST'])
 def create_user():
     data = request.get_json()
+    print(">>> DATA RECEIVED:", data)
 
     required_fields = ['email', 'password', 'name', 'phone']
-    missing_fields = [
-        field for field in required_fields if not data.get(field)]
-
+    missing_fields = [field for field in required_fields if field not in data or data[field].strip() == ""]
     if missing_fields:
         return jsonify({'msg': f"Missing fields: {', '.join(missing_fields)}"}), 400
 
