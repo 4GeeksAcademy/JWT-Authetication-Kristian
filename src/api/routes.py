@@ -48,7 +48,8 @@ def create_user():
         name=data['name'],
         email=email,
         password=hashed_password,
-        phone=data['phone']
+        phone=data['phone'],
+        is_active=True
     )
     db.session.add(new_user)
 

@@ -69,7 +69,7 @@ export const SignUp = () => {
                     </div>
                     <div className="col-6">
                         <label htmlFor="inputPhone" className="form-label">Phone</label>
-                        <input type="tel" name="phone" className="form-control" id="inputPhone" value={formData.phone} onChange={handleChange} />
+                        <input type="text" name="phone" className="form-control" id="inputPhone" value={formData.phone} onChange={handleChange} />
                     </div>
                 </div>
                 <div className="col-12 my-2 d-flex justify-content-center">
