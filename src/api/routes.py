@@ -71,8 +71,6 @@ def create_user():
 def login():
     data = request.get_json() or {}
 
-    data = {k: v.strip() if isinstance(v, str) else v for k, v in data.items()}
-
     if not data.get('email') or not data.get('password'):
         return jsonify({"msg": "Provide email and password"}), 400
 
